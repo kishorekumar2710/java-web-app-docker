@@ -6,7 +6,7 @@ node{
     }
     
     stage(" Maven Clean Package"){
-      def mavenHome =  tool name: "Maven-3.5.6", type: "maven"
+      def mavenHome =  tool name: "Maven-3.6.3", type: "maven"
       def mavenCMD = "${mavenHome}/bin/mvn"
       sh "${mavenCMD} clean package"
       
@@ -14,7 +14,7 @@ node{
     
     
     stage('Build Docker Image'){
-        sh 'docker build -t dockerhandson/java-web-app .'
+         sh "docker build -t kishorekumar2710/java-web-app:${buildnumber} ."
     }
     
     stage('Push Docker Image'){
