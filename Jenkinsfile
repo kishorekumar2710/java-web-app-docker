@@ -1,3 +1,4 @@
+
 node{
      
     stage('SCM Checkout'){
@@ -5,8 +6,7 @@ node{
     }
     
     stage(" Maven Clean Package"){
-      def mavenHome =  tool name: "Maven-3.5.6
-Use a tool from a predefined Tool Installation -- Maven-3.5.4 (self time 14ms) ", type: "maven"
+      def mavenHome =  tool name: "Maven-3.5.6", type: "maven"
       def mavenCMD = "${mavenHome}/bin/mvn"
       sh "${mavenCMD} clean package"
       
@@ -37,5 +37,3 @@ Use a tool from a predefined Tool Installation -- Maven-3.5.4 (self time 14ms) "
        
     }
      
-     
-}
